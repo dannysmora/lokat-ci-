@@ -4,100 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lokat CI</title>
+<title>Lokat CI - La Solution de Location Ivoirienne</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-color:#222;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #fdfdfd; /* Fond légèrement plus clair */
+color:#333;
+line-height: 1.8;
 }
 
 header{
-background:orange;
+background: linear-gradient(135deg, orange 0%, #ff8c00 100%);
 color:white;
 text-align:center;
-padding:70px 20px;
+padding:90px 20px;
+position: relative;
 }
 
 header h1{
-font-size:45px;
-margin-bottom:10px;
+font-size:55px;
+margin-bottom:15px;
+letter-spacing: -2px;
 }
 
 header p{
-font-size:20px;
-max-width:700px;
+font-size:22px;
+max-width:750px;
 margin:auto;
+opacity: 0.9;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 30px;
+margin-top:35px;
+padding:18px 40px;
 background:white;
 color:orange;
-font-size:18px;
+font-size:20px;
 font-weight:bold;
 text-decoration:none;
-border-radius:10px;
-transition: transform 0.2s, background 0.3s;
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+transition: all 0.3s ease;
+box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-transform: translateY(-3px);
+transform: translateY(-4px);
 background: #fff3e0;
+box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 section{
-padding:50px 20px;
-text-align:center;
+padding:80px 20px;
+max-width: 1100px;
+margin: auto;
 }
 
-.images{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-margin-top:30px;
+h2{
+font-size: 36px;
+text-align: center;
+margin-bottom: 50px;
+color: #222;
 }
 
-.images img{
-width:250px;
-border-radius:15px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-transition: 0.3s;
+/* --- Nouvelle disposition séquentielle --- */
+
+.sequence-container {
+display: flex;
+flex-direction: column;
+gap: 60px;
 }
 
-.images img:hover {
-transform: scale(1.05);
+.sequence-item {
+display: flex;
+align-items: center;
+gap: 40px;
 }
 
-.description{
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:1.7;
+.sequence-item:nth-child(even) {
+flex-direction: row-reverse;
+}
+
+.image-wrapper {
+flex: 1;
+max-width: 400px;
+position: relative;
+}
+
+.image-wrapper img {
+width: 100%;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-wrapper img:hover {
+transform: scale(1.03) translateY(-5px);
+box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.description-wrapper {
+flex: 1.5;
+}
+
+.description-wrapper p {
+font-size: 18px;
+color: #555;
+margin-bottom: 20px;
+}
+
+/* --- Style Spécial "Partie de la Semaine" --- */
+
+.paris-special {
+position: absolute;
+top: -25px;
+right: -25px;
+background: rgba(255, 255, 255, 0.95);
+padding: 10px 15px;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+display: flex;
+align-items: center;
+gap: 10px;
+border: 1px solid #ddd;
+}
+
+.paris-special i {
+color: #e41e26; /* Rouge drapeau */
+font-size: 24px;
+}
+
+.paris-special span {
+font-weight: bold;
+color: #222;
+font-size: 14px;
+}
+
+/* --- Style Spécial "Dernière" --- */
+
+.last-special img {
+border-color: #222; /* Bords noirs pour la 'dernière' */
+}
+
+/* ---------------------------------- */
+
+.contact-section {
+background: #f1f1f1;
+text-align: center;
+border-radius: 20px;
+padding: 60px;
+margin-bottom: 80px;
+}
+
+.contact-link {
+color: orange;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.3rem;
 }
 
 footer{
 background:#222;
 color:white;
-padding:20px;
+padding:30px;
 text-align:center;
+font-size: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+header h1 { font-size: 40px; }
+.sequence-item, .sequence-item:nth-child(even) { flex-direction: column; text-align: center; }
+.image-wrapper { max-width: 280px; margin-bottom: 20px; }
+.paris-special { top: -15px; right: -15px; padding: 5px 10px; }
 }
 
 </style>
+<!-- Inclusion des icônes FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
 <header>
 
-<h1>LOKAT CI</h1>
+<h1>Lokat CI</h1>
 
 <p>
 Application de location de maisons,
@@ -115,46 +209,77 @@ en Côte d’Ivoire.
 
 <h2>Pourquoi utiliser Lokat CI ?</h2>
 
-<div class="description">
+<div class="sequence-container">
 
+<!-- Première Image: La Partie de la Semaine (Parisien) -->
+<div class="sequence-item">
+<div class="image-wrapper">
+<img src="app1.jpg" alt="Aperçu Lokat CI - Écran 1">
+<div class="paris-special">
+<i class="fas fa-landmark"></i>
+<span>La Partie de la Semaine</span>
+</div>
+</div>
+<div class="description-wrapper">
 <p>
-Trouvez rapidement des maisons,
-des hôtels, des bars, des piscines
-et plusieurs lieux en Côte d’Ivoire.
+<strong>Coup de Cœur de la Semaine :</strong> Cette section 'Parisienne' de l'application met en avant la propriété ou l'expérience la plus recherchée de la semaine. Découvrez le "Lieu Idéal" !
 </p>
-
 <p>
-L'application permet de rechercher
-par ville, quartier et prix facilement.
+Trouvez rapidement des maisons, des hôtels, des bars, des piscines et plusieurs lieux en Côte d’Ivoire grâce à une sélection exclusive et mise à jour régulièrement.
 </p>
-
+</div>
 </div>
 
-<div class="images">
+<!-- Deuxième Image: Recherche Intuitve -->
+<div class="sequence-item">
+<div class="image-wrapper">
+<img src="app2.jpg" alt="Aperçu Lokat CI - Écran 2">
+</div>
+<div class="description-wrapper">
+<p>
+<strong>Recherche Simple et Précise :</strong> L'application permet de rechercher par ville, quartier et prix facilement. Vous ne perdrez plus de temps à chercher.
+</p>
+<p>
+Que vous soyez à Abidjan ou à San-Pédro, notre interface intuitive vous guide directement vers ce que vous cherchez, avec des photos claires et des prix transparents.
+</p>
+</div>
+</div>
 
-<img src="app1.jpg" alt="Aperçu de l'application Lokat CI - Écran 1">
-
-<img src="app2.jpg" alt="Aperçu de l'application Lokat CI - Écran 2">
-
-<img src="app3.jpg" alt="Aperçu de l'application Lokat CI - Écran 3">
+<!-- Troisième Image: Divertissements -->
+<div class="sequence-item last-special">
+<div class="image-wrapper">
+<img src="app3.jpg" alt="Aperçu Lokat CI - Écran 3">
+</div>
+<div class="description-wrapper">
+<p>
+<strong>L'Essentiel du Divertissement :</strong> Cette 'dernière' section de l'application vous donne un accès rapide aux lieux de divertissement les plus branchés.
+</p>
+<p>
+Bars, piscines, et clubs : tout est à portée de main. Lokat CI n'est pas seulement pour se loger, c'est aussi pour s'amuser.
+</p>
+</div>
+</div>
 
 </div>
 
 </section>
 
-<section>
+<section class="contact-section">
 
 <h2>Contact</h2>
 
 <p>
-WhatsApp : +225 07 05 69 17 76
+Une question ? Un partenariat ? Contactez-nous via WhatsApp :
 </p>
+<a class="contact-link" href="https://wa.me/2250705691776">
+<i class="fab fa-whatsapp"></i> +225 07 05 69 17 76
+</a>
 
 </section>
 
 <footer>
 
-© Rhacin Studio
+© Rhacin Studio. Tous droits réservés.
 
 </footer>
 
