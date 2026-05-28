@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokat CI | Louez et Publiez en Côte d'Ivoire</title>
-    <!-- Polices et Icônes -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -24,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Header --- */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, #FF8C00 100%);
             color: var(--white);
@@ -51,7 +49,6 @@
 
         .btn-download:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
 
-        /* --- Sections --- */
         .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
 
         .feature-row {
@@ -90,12 +87,10 @@
             margin-bottom: 10px;
         }
 
-        /* --- Animations --- */
         @keyframes fadeInUp {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- Footer --- */
         footer { background: var(--secondary); color: white; padding: 40px; text-align: center; }
         .whatsapp-contact { color: var(--primary); font-size: 1.5rem; text-decoration: none; font-weight: 700; }
 
@@ -110,15 +105,17 @@
     <header>
         <h1>LOKAT CI</h1>
         <p>L'immobilier et le divertissement en Côte d'Ivoire, réunis dans une seule application.</p>
-        <a href="#" class="btn-download"><i class="fas fa-cloud-download-alt"></i> Télécharger l'App</a>
+        <a href="https://github.com/dannysmora/lokat-ci-/releases/download/v1.0.0/app-release.apk" class="btn-download" download="Lokat-CI">
+            <i class="fas fa-cloud-download-alt"></i> Télécharger l'App
+        </a>
     </header>
 
     <div class="container">
 
-        <!-- 1. Page d'Accueil (Image 1000287217.jpg) -->
+        <!-- 1. Page d'Accueil (app3.jpg) -->
         <div class="feature-row">
             <div class="feature-image">
-                <img src="app3.jpg" alt="Accueil Lokat CI"> <!-- Correspond à l'accueil selon ta description -->
+                <img src="app3.jpg" alt="Accueil Lokat CI">
             </div>
             <div class="feature-text">
                 <div class="badge">Étape 1 : Explorer</div>
@@ -127,10 +124,10 @@
             </div>
         </div>
 
-        <!-- 2. Page Déposer (Image 1000287219.jpg) -->
+        <!-- 2. Page Déposer (app2.jpg) - TEXTE CORRIGÉ -->
         <div class="feature-row">
             <div class="feature-image">
-                <img src="app2.jpg" alt="Déposer une annonce"> <!-- Correspond à la page dépôt -->
+                <img src="app2.jpg" alt="Déposer une annonce">
             </div>
             <div class="feature-text">
                 <div class="badge">Étape 2 : Publier</div>
@@ -139,10 +136,10 @@
             </div>
         </div>
 
-        <!-- 3. Page Profil (Image 1000287221.jpg) -->
+        <!-- 3. Page Profil (app1.jpg) - TEXTE CORRIGÉ -->
         <div class="feature-row">
             <div class="feature-image">
-                <img src="app1.jpg" alt="Profil Lokat CI"> <!-- Correspond au profil -->
+                <img src="app1.jpg" alt="Profil Lokat CI">
             </div>
             <div class="feature-text">
                 <div class="badge">Étape 3 : Gérer</div>
