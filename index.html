@@ -1,287 +1,169 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokat CI | Louez et Publiez en Côte d'Ivoire</title>
+    <!-- Polices et Icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<title>Lokat CI - La Solution de Location Ivoirienne</title>
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --secondary: #2D3436;
+            --light: #F9F9F9;
+            --white: #FFFFFF;
+        }
 
-<style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
 
-body{
-margin:0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: #fdfdfd; /* Fond légèrement plus clair */
-color:#333;
-line-height: 1.8;
-}
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8C00 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
 
-header{
-background: linear-gradient(135deg, orange 0%, #ff8c00 100%);
-color:white;
-text-align:center;
-padding:90px 20px;
-position: relative;
-}
+        header h1 { font-size: 3.5rem; margin: 0; font-weight: 700; }
+        header p { font-size: 1.2rem; max-width: 600px; margin: 20px auto; opacity: 0.9; }
 
-header h1{
-font-size:55px;
-margin-bottom:15px;
-letter-spacing: -2px;
-}
+        .btn-download {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-header p{
-font-size:22px;
-max-width:750px;
-margin:auto;
-opacity: 0.9;
-}
+        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
 
-.btn{
-display:inline-block;
-margin-top:35px;
-padding:18px 40px;
-background:white;
-color:orange;
-font-size:20px;
-font-weight:bold;
-text-decoration:none;
-border-radius:12px;
-transition: all 0.3s ease;
-box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
+        /* --- Sections --- */
+        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
 
-.btn:hover {
-transform: translateY(-4px);
-background: #fff3e0;
-box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
 
-section{
-padding:80px 20px;
-max-width: 1100px;
-margin: auto;
-}
+        .feature-row:nth-child(even) { flex-direction: row-reverse; }
 
-h2{
-font-size: 36px;
-text-align: center;
-margin-bottom: 50px;
-color: #222;
-}
+        .feature-image { flex: 1; text-align: center; }
+        .feature-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 8px solid white;
+        }
 
-/* --- Nouvelle disposition séquentielle --- */
+        .feature-text { flex: 1.2; }
+        .feature-text h2 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; }
+        .feature-text p { font-size: 1.1rem; line-height: 1.6; color: #636e72; }
 
-.sequence-container {
-display: flex;
-flex-direction: column;
-gap: 60px;
-}
+        .badge {
+            background: #FFEAA7;
+            color: #D63031;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
-.sequence-item {
-display: flex;
-align-items: center;
-gap: 40px;
-}
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.sequence-item:nth-child(even) {
-flex-direction: row-reverse;
-}
+        /* --- Footer --- */
+        footer { background: var(--secondary); color: white; padding: 40px; text-align: center; }
+        .whatsapp-contact { color: var(--primary); font-size: 1.5rem; text-decoration: none; font-weight: 700; }
 
-.image-wrapper {
-flex: 1;
-max-width: 400px;
-position: relative;
-}
-
-.image-wrapper img {
-width: 100%;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.image-wrapper img:hover {
-transform: scale(1.03) translateY(-5px);
-box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-.description-wrapper {
-flex: 1.5;
-}
-
-.description-wrapper p {
-font-size: 18px;
-color: #555;
-margin-bottom: 20px;
-}
-
-/* --- Style Spécial "Partie de la Semaine" --- */
-
-.paris-special {
-position: absolute;
-top: -25px;
-right: -25px;
-background: rgba(255, 255, 255, 0.95);
-padding: 10px 15px;
-border-radius: 15px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-display: flex;
-align-items: center;
-gap: 10px;
-border: 1px solid #ddd;
-}
-
-.paris-special i {
-color: #e41e26; /* Rouge drapeau */
-font-size: 24px;
-}
-
-.paris-special span {
-font-weight: bold;
-color: #222;
-font-size: 14px;
-}
-
-/* --- Style Spécial "Dernière" --- */
-
-.last-special img {
-border-color: #222; /* Bords noirs pour la 'dernière' */
-}
-
-/* ---------------------------------- */
-
-.contact-section {
-background: #f1f1f1;
-text-align: center;
-border-radius: 20px;
-padding: 60px;
-margin-bottom: 80px;
-}
-
-.contact-link {
-color: orange;
-text-decoration: none;
-font-weight: bold;
-font-size: 1.3rem;
-}
-
-footer{
-background:#222;
-color:white;
-padding:30px;
-text-align:center;
-font-size: 15px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-header h1 { font-size: 40px; }
-.sequence-item, .sequence-item:nth-child(even) { flex-direction: column; text-align: center; }
-.image-wrapper { max-width: 280px; margin-bottom: 20px; }
-.paris-special { top: -15px; right: -15px; padding: 5px 10px; }
-}
-
-</style>
-<!-- Inclusion des icônes FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        @media (max-width: 768px) {
+            .feature-row, .feature-row:nth-child(even) { flex-direction: column; text-align: center; }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <h1>LOKAT CI</h1>
+        <p>L'immobilier et le divertissement en Côte d'Ivoire, réunis dans une seule application.</p>
+        <a href="#" class="btn-download"><i class="fas fa-cloud-download-alt"></i> Télécharger l'App</a>
+    </header>
 
-<h1>Lokat CI</h1>
+    <div class="container">
 
-<p>
-Application de location de maisons,
-hôtels et lieux de divertissement
-en Côte d’Ivoire.
-</p>
+        <!-- 1. Page d'Accueil (Image 1000287217.jpg) -->
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="app3.jpg" alt="Accueil Lokat CI"> <!-- Correspond à l'accueil selon ta description -->
+            </div>
+            <div class="feature-text">
+                <div class="badge">Étape 1 : Explorer</div>
+                <h2>Tout commence ici</h2>
+                <p>Sur la <strong>Page d'Accueil</strong>, découvrez toutes les annonces postées par la communauté. Que vous cherchiez une maison à louer ou un lieu fun, tout est centralisé. Vous pouvez entrer dans chaque annonce pour consulter les détails et contacter directement le propriétaire.</p>
+            </div>
+        </div>
 
-<a class="btn" href="#">
-📥 Télécharger l'application
-</a>
+        <!-- 2. Page Déposer (Image 1000287219.jpg) -->
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="app2.jpg" alt="Déposer une annonce"> <!-- Correspond à la page dépôt -->
+            </div>
+            <div class="feature-text">
+                <div class="badge">Étape 2 : Publier</div>
+                <h2>Devenez Annonceur</h2>
+                <p>La <strong>Page de Publication</strong> vous permet de mettre vos biens en avant. Déposez vos annonces de maisons, d'hôtels ou de restaurants. Renseignez le prix en FCFA, le quartier, et ajoutez vos plus belles photos pour attirer vos futurs clients en un clic.</p>
+            </div>
+        </div>
 
-</header>
+        <!-- 3. Page Profil (Image 1000287221.jpg) -->
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="app1.jpg" alt="Profil Lokat CI"> <!-- Correspond au profil -->
+            </div>
+            <div class="feature-text">
+                <div class="badge">Étape 3 : Gérer</div>
+                <h2>Votre Espace Personnel</h2>
+                <p>Suivez vos activités sur votre <strong>Espace Profil</strong>. Retrouvez la liste de vos annonces actives, gérez vos informations et déconnectez-vous en toute sécurité. C'est votre tableau de bord pour piloter votre business sur Lokat CI.</p>
+            </div>
+        </div>
 
-<section>
+    </div>
 
-<h2>Pourquoi utiliser Lokat CI ?</h2>
+    <section style="text-align: center; padding: 80px 20px; background: #eee;">
+        <h2>Prêt à trouver votre prochain "Lieu Idéal" ?</h2>
+        <p>Rejoignez des milliers d'utilisateurs en Côte d'Ivoire.</p>
+        <a href="https://wa.me/2250705691776" class="whatsapp-contact">
+            <i class="fab fa-whatsapp"></i> +225 07 05 69 17 76
+        </a>
+    </section>
 
-<div class="sequence-container">
-
-<!-- Première Image: La Partie de la Semaine (Parisien) -->
-<div class="sequence-item">
-<div class="image-wrapper">
-<img src="app1.jpg" alt="Aperçu Lokat CI - Écran 1">
-<div class="paris-special">
-<i class="fas fa-landmark"></i>
-<span>La Partie de la Semaine</span>
-</div>
-</div>
-<div class="description-wrapper">
-<p>
-<strong>Coup de Cœur de la Semaine :</strong> Cette section 'Parisienne' de l'application met en avant la propriété ou l'expérience la plus recherchée de la semaine. Découvrez le "Lieu Idéal" !
-</p>
-<p>
-Trouvez rapidement des maisons, des hôtels, des bars, des piscines et plusieurs lieux en Côte d’Ivoire grâce à une sélection exclusive et mise à jour régulièrement.
-</p>
-</div>
-</div>
-
-<!-- Deuxième Image: Recherche Intuitve -->
-<div class="sequence-item">
-<div class="image-wrapper">
-<img src="app2.jpg" alt="Aperçu Lokat CI - Écran 2">
-</div>
-<div class="description-wrapper">
-<p>
-<strong>Recherche Simple et Précise :</strong> L'application permet de rechercher par ville, quartier et prix facilement. Vous ne perdrez plus de temps à chercher.
-</p>
-<p>
-Que vous soyez à Abidjan ou à San-Pédro, notre interface intuitive vous guide directement vers ce que vous cherchez, avec des photos claires et des prix transparents.
-</p>
-</div>
-</div>
-
-<!-- Troisième Image: Divertissements -->
-<div class="sequence-item last-special">
-<div class="image-wrapper">
-<img src="app3.jpg" alt="Aperçu Lokat CI - Écran 3">
-</div>
-<div class="description-wrapper">
-<p>
-<strong>L'Essentiel du Divertissement :</strong> Cette 'dernière' section de l'application vous donne un accès rapide aux lieux de divertissement les plus branchés.
-</p>
-<p>
-Bars, piscines, et clubs : tout est à portée de main. Lokat CI n'est pas seulement pour se loger, c'est aussi pour s'amuser.
-</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<section class="contact-section">
-
-<h2>Contact</h2>
-
-<p>
-Une question ? Un partenariat ? Contactez-nous via WhatsApp :
-</p>
-<a class="contact-link" href="https://wa.me/2250705691776">
-<i class="fab fa-whatsapp"></i> +225 07 05 69 17 76
-</a>
-
-</section>
-
-<footer>
-
-© Rhacin Studio. Tous droits réservés.
-
-</footer>
+    <footer>
+        <p>© 2026 Rhacin Studio - Propulsé par l'innovation Ivoirienne</p>
+    </footer>
 
 </body>
 </html>
